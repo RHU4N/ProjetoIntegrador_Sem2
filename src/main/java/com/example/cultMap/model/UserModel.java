@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,52 +17,50 @@ public class UserModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ID;
 	
-	private Integer IDPhone;
-	private String Nome;
-	private String Email;
+	@OneToOne
+	private PhoneModel IDPhone;
+	
+	@OneToOne
+	private SignModel IDSignUser;
+	
 	private String CPF;
-	private String Senha;
 	private Date DTNascimento;
 	
 	public Integer getID() {
 		return ID;
 	}
-	public Integer getIDPhone() {
+	
+	public PhoneModel getIDPhone() {
 		return IDPhone;
 	}
-	public void setIDPhone(Integer iDPhone) {
+
+	public void setIDPhone(PhoneModel iDPhone) {
 		IDPhone = iDPhone;
 	}
-	public String getEmail() {
-		return Email;
+
+
+	public SignModel getIDSignUser() {
+		return IDSignUser;
 	}
-	public void setEmail(String email) {
-		Email = email;
+
+	public void setIDSignUser(SignModel iDSignUser) {
+		IDSignUser = iDSignUser;
 	}
+
 	public String getCPF() {
 		return CPF;
 	}
 	public void setCPF(String cpf) {
 		CPF = cpf;
 	}
-	public String getSenha() {
-		return Senha;
-	}
-	public void setSenha(String senha) {
-		Senha = senha;
-	}
+
 	public Date getDTNascimento() {
 		return DTNascimento;
 	}
 	public void setDTNascimento(Date dTNascimento) {
 		DTNascimento = dTNascimento;
 	}
-	public String getNome() {
-		return Nome;
-	}
-	public void setNome(String nome) {
-		Nome = nome;
-	}
+
 	
 	public UserModel() {}
 }

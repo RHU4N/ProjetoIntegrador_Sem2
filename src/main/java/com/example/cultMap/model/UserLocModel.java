@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,19 +18,24 @@ public class UserLocModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ID;
 	
-	private Integer IDUser;
+	@OneToOne
+	private UserModel IDUser;
+	
 	private Point Coordenadas;
 	private Timestamp DTRegistro;
 	
 	public Integer getID() {
 		return ID;
 	}
-	public Integer getIDUser() {
+	
+	public UserModel getIDUser() {
 		return IDUser;
 	}
-	public void setIDUser(Integer iDUser) {
+
+	public void setIDUser(UserModel iDUser) {
 		IDUser = iDUser;
 	}
+
 	public Point getCoordenadas() {
 		return Coordenadas;
 	}

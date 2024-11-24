@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,9 +19,15 @@ public class AdModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ID;
 	
-	private Integer IDAdviser;
+	@OneToOne
+	private AdvertiserModel IDAdvertiser;
+	
+	@OneToMany
 	private Integer IDCategory;
+	
+	@OneToOne
 	private Integer IDAddress;
+	
 	private String Titulo;
 	private String Descricao;
 	private Timestamp DTCriacao;
@@ -28,24 +36,37 @@ public class AdModel {
 	public Integer getID() {
 		return ID;
 	}
-	public Integer getIDAdviser() {
-		return IDAdviser;
+
+	public AdvertiserModel getIDAdviser() {
+		return IDAdvertiser;
 	}
-	public void setIDAdviser(Integer iDAdviser) {
-		IDAdviser = iDAdviser;
+
+	public void setIDAdviser(AdvertiserModel iDAdviser) {
+		IDAdvertiser = iDAdviser;
 	}
+	
 	public Integer getIDCategory() {
 		return IDCategory;
 	}
+
 	public void setIDCategory(Integer iDCategory) {
 		IDCategory = iDCategory;
 	}
+
+
+
 	public Integer getIDAddress() {
 		return IDAddress;
 	}
+
+
+
 	public void setIDAddress(Integer iDAddress) {
 		IDAddress = iDAddress;
 	}
+
+
+
 	public String getTitulo() {
 		return Titulo;
 	}

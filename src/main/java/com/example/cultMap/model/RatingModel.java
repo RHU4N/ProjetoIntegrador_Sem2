@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,26 +15,35 @@ public class RatingModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer ID;
 	
-	private Integer IDUser;
-	private Integer IDAd;
+	@OneToOne
+	private UserModel IDUser;
+	
+	@OneToOne
+	private AdModel IDAd;
+	
 	private String Avaliacao;
 	private Integer Estrelas;
 	
 	public Integer getID() {
 		return ID;
 	}
-	public Integer getIDUser() {
+	
+	public UserModel getIDUser() {
 		return IDUser;
 	}
-	public void setIDUser(Integer iDUser) {
+
+	public void setIDUser(UserModel iDUser) {
 		IDUser = iDUser;
 	}
-	public Integer getIDAd() {
+
+	public AdModel getIDAd() {
 		return IDAd;
 	}
-	public void setIDAd(Integer iDAd) {
+
+	public void setIDAd(AdModel iDAd) {
 		IDAd = iDAd;
 	}
+
 	public String getAvaliacao() {
 		return Avaliacao;
 	}
