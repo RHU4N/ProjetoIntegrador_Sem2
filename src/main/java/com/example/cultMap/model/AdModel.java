@@ -3,6 +3,8 @@ package com.example.cultMap.model;
 
 import java.sql.Timestamp;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,10 +25,10 @@ public class AdModel {
 	private AdvertiserModel IDAdvertiser;
 	
 	@OneToMany
-	private Integer IDCategory;
+	private CategoryModel IDCategory;
 	
 	@OneToOne
-	private Integer IDAddress;
+	private AddressModel IDAddress;
 	
 	private String Titulo;
 	private String Descricao;
@@ -45,23 +47,23 @@ public class AdModel {
 		IDAdvertiser = iDAdviser;
 	}
 	
-	public Integer getIDCategory() {
+	public CategoryModel getIDCategory() {
 		return IDCategory;
 	}
 
-	public void setIDCategory(Integer iDCategory) {
+	public void setIDCategory(CategoryModel iDCategory) {
 		IDCategory = iDCategory;
 	}
 
 
 
-	public Integer getIDAddress() {
+	public AddressModel getIDAddress() {
 		return IDAddress;
 	}
 
 
 
-	public void setIDAddress(Integer iDAddress) {
+	public void setIDAddress(AddressModel iDAddress) {
 		IDAddress = iDAddress;
 	}
 
