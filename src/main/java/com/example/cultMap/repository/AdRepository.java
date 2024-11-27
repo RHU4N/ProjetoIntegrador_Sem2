@@ -5,14 +5,15 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.cultMap.model.AdModel;
-import com.example.cultMap.model.SignModel;
+import com.example.cultMap.model.AdvertiserModel;
+import com.example.cultMap.model.CategoryModel;
 
 public interface AdRepository extends JpaRepository<AdModel, Integer>{
 
-	List<AdModel> searchByDescriptionStartingWithIgnoreCaseAndAdvertiser(String query, SignModel user);
+	List<AdModel> searchByDescricaoStartingWithIgnoreCase(String query);
 
-	List<AdModel> findByAdvertiserId(Integer id);
+	List<AdModel> findByIdAdvertiser(AdvertiserModel id);
 
-	List<AdModel> findByCategory(Integer categoryId, Integer userId);
+	List<AdModel> findByIdCategory(CategoryModel category );
 
 }

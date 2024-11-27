@@ -13,49 +13,60 @@ public class CommentModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private UserModel IDUser;
+	private UserModel idUser;
 	
 	@OneToOne
-	private AdModel IDAd;
+	private AdModel idAd;
 	
-	private String Comentario;
+	private String comentario;
 	
-	public Integer getID() {
-		return ID;
-	}
 	
-	public UserModel getIDUser() {
-		return IDUser;
+	
+	public UserModel getIdUser() {
+		return idUser;
 	}
 
 
 
-	public void setIDUser(UserModel iDUser) {
-		IDUser = iDUser;
-	}
-
-	public AdModel getIDAd() {
-		return IDAd;
+	public void setIdUser(UserModel idUser) {
+		this.idUser = idUser;
 	}
 
 
 
-	public void setIDAd(AdModel iDAd) {
-		IDAd = iDAd;
+	public AdModel getIdAd() {
+		return idAd;
+	}
+
+
+
+	public void setIdAd(AdModel idAd) {
+		this.idAd = idAd;
 	}
 
 
 
 	public String getComentario() {
-		return Comentario;
+		return comentario;
 	}
+
+
+
 	public void setComentario(String comentario) {
-		Comentario = comentario;
+		this.comentario = comentario;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public CommentModel() {
 		// TODO Auto-generated constructor stub
 	}

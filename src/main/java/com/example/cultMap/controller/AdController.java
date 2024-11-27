@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.cultMap.model.AdModel;
 import com.example.cultMap.model.AdvertiserModel;
+import com.example.cultMap.model.CategoryModel;
 import com.example.cultMap.model.SignModel;
 import com.example.cultMap.repository.AdvertiserRepository;
 import com.example.cultMap.service.AdService;
@@ -39,8 +40,8 @@ public class AdController {
 			@RequestHeader(name="token",required = true)String token){
 		Boolean isValid = sS.validate(token);
 		if(isValid) {
-			AdvertiserModel user = advR.findBySignID(sS.toUser(token));
-			task.setIDAdviser(user);
+			AdvertiserModel user = advR.findByIdSignAdv(sS.toUser(token));
+			task.setIdAdvertiser(user);
 			AdModel save = aS.save(task);
 			return ResponseEntity.ok(save);
 		}
@@ -53,7 +54,7 @@ public class AdController {
 		Boolean isValid = sS.validate(token);
 		if(isValid) {
 			SignModel user = sS.toUser(token);
-			List<AdModel> list = aS.findByUserId(user.getID());
+			List<AdModel> list = aS.findByUserId(advR.findByIdSignAdv(user));
 			return ResponseEntity.ok(list);
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
@@ -77,20 +78,19 @@ public class AdController {
 			,@RequestHeader(name= "token", required = true) String token){
 		Boolean isValid = sS.validate(token);
 		if(isValid) {
-			SignModel user = sS.toUser(token);
-			List<AdModel> list = aS.search(query, user);
+			List<AdModel> list = aS.search(query);
 			return ResponseEntity.ok(list);
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	}
 	
 	@GetMapping("/category/{id}")
-	public ResponseEntity<List<AdModel>> findByCategoryId(@PathVariable(name = "id") Integer categoryId,
+	public ResponseEntity<List<AdModel>> findByCategoryId(@PathVariable(name = "id") CategoryModel categoryId,
 			@RequestHeader(name = "token", required = true) String token) {
 		Boolean isValid = sS.validate(token);
 		if (isValid) {
 			SignModel user = sS.toUser(token);
-			List<AdModel> list = aS.findByCategoryId(categoryId, user.getID());
+			List<AdModel> list = aS.findByCategoryId(categoryId, user.getId());
 			return ResponseEntity.ok(list);
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

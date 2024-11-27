@@ -16,39 +16,58 @@ import jakarta.persistence.Table;
 public class UserLocModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private UserModel IDUser;
+	private UserModel idUser;
 	
-	private Point Coordenadas;
-	private Timestamp DTRegistro;
+	private Point coordenadas;
+	private Timestamp dtRegistro;
 	
-	public Integer getID() {
-		return ID;
-	}
 	
-	public UserModel getIDUser() {
-		return IDUser;
+	
+	public UserModel getIdUser() {
+		return idUser;
 	}
 
-	public void setIDUser(UserModel iDUser) {
-		IDUser = iDUser;
+
+
+	public void setIdUser(UserModel idUser) {
+		this.idUser = idUser;
 	}
+
+
 
 	public Point getCoordenadas() {
-		return Coordenadas;
+		return coordenadas;
 	}
+
+
+
 	public void setCoordenadas(Point coordenadas) {
-		Coordenadas = coordenadas;
+		this.coordenadas = coordenadas;
 	}
-	public Timestamp getDTRegistro() {
-		return DTRegistro;
+
+
+
+	public Timestamp getDtRegistro() {
+		return dtRegistro;
 	}
-	public void setDTRegistro(Timestamp dTRegistro) {
-		DTRegistro = dTRegistro;
+
+
+
+	public void setDtRegistro(Timestamp dtRegistro) {
+		this.dtRegistro = dtRegistro;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public UserLocModel() {
 		// TODO Auto-generated constructor stub
 	}

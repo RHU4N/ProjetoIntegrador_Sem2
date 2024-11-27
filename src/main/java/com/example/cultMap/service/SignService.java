@@ -65,7 +65,7 @@ public class SignService {
 		sign.setSenha(generateHash(senha));
 		sign.setEmail(email);
 		
-		phone.setDDD(ddd);
+		phone.setDdd(ddd);
 		phone.setNumero(numero);
 		
 		Optional<SignModel> userExisting = sR.findByEmail(email);
@@ -78,17 +78,17 @@ public class SignService {
 			
 			if(tipo == "Anunciante") {
 				AdvertiserModel aM = new AdvertiserModel();
-				aM.setCNPJ(cnpj);
-				aM.setIDSignAdv(sR.findById(sign.getID()).get());
-				aM.setIDPhone(pR.findById(phone.getID()).get());
+				aM.setCnpj(cnpj);
+				aM.setIdSignAdv(sR.findById(sign.getId()).get());
+				aM.setIdPhone(pR.findById(phone.getId()).get());
 				
 				aR.save(aM);
 			}else if(tipo == "Usuario") {
 				UserModel uM = new UserModel();
-				uM.setCPF(cpf);
-				uM.setDTNascimento(dtNascimento);
-				uM.setIDSignUser(sR.findById(sign.getID()).get());
-				uM.setIDPhone(pR.findById(phone.getID()).get());
+				uM.setCpf(cpf);
+				uM.setDtNascimento(dtNascimento);
+				uM.setIdSignUser(sR.findById(sign.getId()).get());
+				uM.setIdPhone(pR.findById(phone.getId()).get());
 				
 				uR.save(uM);
 			}

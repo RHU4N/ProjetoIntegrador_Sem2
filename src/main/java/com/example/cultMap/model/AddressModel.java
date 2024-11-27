@@ -12,55 +12,95 @@ public class AddressModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
-	private String Logradouro;
-	private Integer Numero;
-	private String Bairro;
-	private String Cidade;
-	private String Estado;
-	private String Pais;
+	private String logradouro;
+	private Integer numero;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String pais;
 	
-	public Integer getID() {
-		return ID;
-	}
+	
+	
 	public String getLogradouro() {
-		return Logradouro;
+		return logradouro;
 	}
+
+
+
 	public void setLogradouro(String logradouro) {
-		Logradouro = logradouro;
+		this.logradouro = logradouro;
 	}
+
+
+
 	public Integer getNumero() {
-		return Numero;
+		return numero;
 	}
+
+
+
 	public void setNumero(Integer numero) {
-		Numero = numero;
+		this.numero = numero;
 	}
+
+
+
 	public String getBairro() {
-		return Bairro;
+		return bairro;
 	}
+
+
+
 	public void setBairro(String bairro) {
-		Bairro = bairro;
+		this.bairro = bairro;
 	}
+
+
+
 	public String getCidade() {
-		return Cidade;
+		return cidade;
 	}
+
+
+
 	public void setCidade(String cidade) {
-		Cidade = cidade;
+		this.cidade = cidade;
 	}
+
+
+
 	public String getEstado() {
-		return Estado;
+		return estado;
 	}
+
+
+
 	public void setEstado(String estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
+
+
+
 	public String getPais() {
-		return Pais;
+		return pais;
 	}
+
+
+
 	public void setPais(String pais) {
-		Pais = pais;
+		this.pais = pais;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public AddressModel() {
 		// TODO Auto-generated constructor stub
 	}

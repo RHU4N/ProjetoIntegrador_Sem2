@@ -2,14 +2,11 @@ package com.example.cultMap.model;
 
 
 import java.sql.Timestamp;
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -19,79 +16,65 @@ public class AdModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private AdvertiserModel IDAdvertiser;
+	private AdvertiserModel idAdvertiser;
 	
-	@OneToMany
-	private CategoryModel IDCategory;
+	@ManyToOne
+	private CategoryModel idCategory;
 	
 	@OneToOne
-	private AddressModel IDAddress;
+	private AddressModel idAddress;
 	
-	private String Titulo;
-	private String Descricao;
-	private Timestamp DTCriacao;
-	private Timestamp DTLimite;
-	
-	public Integer getID() {
-		return ID;
+	private String titulo;
+	private String descricao;
+	private Timestamp dtCriacao;
+	private Timestamp dtLimite;
+	public AdvertiserModel getIdAdvertiser() {
+		return idAdvertiser;
 	}
-
-	public AdvertiserModel getIDAdviser() {
-		return IDAdvertiser;
+	public void setIdAdvertiser(AdvertiserModel idAdvertiser) {
+		this.idAdvertiser = idAdvertiser;
 	}
-
-	public void setIDAdviser(AdvertiserModel iDAdviser) {
-		IDAdvertiser = iDAdviser;
+	public CategoryModel getIdCategory() {
+		return idCategory;
 	}
-	
-	public CategoryModel getIDCategory() {
-		return IDCategory;
+	public void setIdCategory(CategoryModel idCategory) {
+		this.idCategory = idCategory;
 	}
-
-	public void setIDCategory(CategoryModel iDCategory) {
-		IDCategory = iDCategory;
+	public AddressModel getIdAddress() {
+		return idAddress;
 	}
-
-
-
-	public AddressModel getIDAddress() {
-		return IDAddress;
+	public void setIdAddress(AddressModel idAddress) {
+		this.idAddress = idAddress;
 	}
-
-
-
-	public void setIDAddress(AddressModel iDAddress) {
-		IDAddress = iDAddress;
-	}
-
-
-
 	public String getTitulo() {
-		return Titulo;
+		return titulo;
 	}
 	public void setTitulo(String titulo) {
-		Titulo = titulo;
+		this.titulo = titulo;
 	}
 	public String getDescricao() {
-		return Descricao;
+		return descricao;
 	}
 	public void setDescricao(String descricao) {
-		Descricao = descricao;
+		this.descricao = descricao;
 	}
-	public Timestamp getDTCriacao() {
-		return DTCriacao;
+	public Timestamp getDtCriacao() {
+		return dtCriacao;
 	}
-	public void setDTCriacao(Timestamp dTCriacao) {
-		DTCriacao = dTCriacao;
+	public void setDtCriacao(Timestamp dtCriacao) {
+		this.dtCriacao = dtCriacao;
 	}
-	public Timestamp getDTLimite() {
-		return DTLimite;
+	public Timestamp getDtLimite() {
+		return dtLimite;
 	}
-	public void setDTLimite(Timestamp dTLimite) {
-		DTLimite = dTLimite;
+	public void setDtLimite(Timestamp dtLimite) {
+		this.dtLimite = dtLimite;
+	}
+	public Integer getId() {
+		return id;
 	}
 	
 	public AdModel() {

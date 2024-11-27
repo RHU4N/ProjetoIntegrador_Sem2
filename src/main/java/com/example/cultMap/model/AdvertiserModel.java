@@ -13,44 +13,67 @@ public class AdvertiserModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private PhoneModel IDPhone;
+	private PhoneModel idPhone;
 	
 	@OneToOne
-	private SignModel IDSignAdv;
+	private SignModel idSignAdv;
 	
-	private String CNPJ;
+	private String cnpj;
 	
-	public Integer getID() {
-		return ID;
-	}
-	
-	public PhoneModel getIDPhone() {
-		return IDPhone;
-	}
-
-	public void setIDPhone(PhoneModel iDPhone) {
-		IDPhone = iDPhone;
-	}
-
-	public SignModel getIDSignAdv() {
-		return IDSignAdv;
-	}
-
-	public void setIDSignAdv(SignModel iDSignAdv) {
-		IDSignAdv = iDSignAdv;
-	}
-
-	public String getCNPJ() {
-		return CNPJ;
-	}
-	public void setCNPJ(String cNPJ) {
-		CNPJ = cNPJ;
-	}
 
 	
+	public PhoneModel getIdPhone() {
+		return idPhone;
+	}
+
+
+
+
+	public void setIdPhone(PhoneModel idPhone) {
+		this.idPhone = idPhone;
+	}
+
+
+
+
+	public SignModel getIdSignAdv() {
+		return idSignAdv;
+	}
+
+
+
+
+	public void setIdSignAdv(SignModel idSignAdv) {
+		this.idSignAdv = idSignAdv;
+	}
+
+
+
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+
+
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+
 	public AdvertiserModel() {
 		// TODO Auto-generated constructor stub
 	}

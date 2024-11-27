@@ -12,33 +12,34 @@ public class SignModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
-	private String Nome;
-	private String Email;
-	private String Senha;
-	
+	private String nome;
+	private String email;
+	private String senha;
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getSenha() {
-		return Senha;
+		return senha;
 	}
 	public void setSenha(String senha) {
-		Senha = senha;
+		this.senha = senha;
 	}
-	public Integer getID() {
-		return ID;
+	public Integer getId() {
+		return id;
 	}
+	
+	
 	
 	
 }

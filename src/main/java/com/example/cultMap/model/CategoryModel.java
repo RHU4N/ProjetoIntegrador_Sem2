@@ -12,20 +12,30 @@ public class CategoryModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
-	private String Categoria;
-
-	public Integer getID() {
-		return ID;
-	}
+	private String categoria;
+	
+	
+	
 	public String getCategoria() {
-		return Categoria;
+		return categoria;
 	}
+
+
+
 	public void setCategoria(String categoria) {
-		Categoria = categoria;
+		this.categoria = categoria;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public CategoryModel() {
 		// TODO Auto-generated constructor stub
 	}

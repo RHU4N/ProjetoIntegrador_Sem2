@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.cultMap.model.AdModel;
-import com.example.cultMap.model.SignModel;
+import com.example.cultMap.model.AdvertiserModel;
+import com.example.cultMap.model.CategoryModel;
 import com.example.cultMap.repository.AdRepository;
 
 @Service
@@ -31,29 +32,29 @@ public class AdService {
 	}
 	
 	public AdModel update(AdModel ad) {
-		Optional<AdModel> found = aR.findById(ad.getID());
+		Optional<AdModel> found = aR.findById(ad.getId());
 		
 		found.get().setTitulo(ad.getTitulo());
 		found.get().setDescricao(ad.getDescricao());
-		found.get().setIDAdviser(ad.getIDAdviser());
-		found.get().setDTCriacao(ad.getDTCriacao());
-		found.get().setDTLimite(ad.getDTLimite());
-		found.get().setIDCategory(ad.getIDCategory());
-		found.get().setIDAddress(ad.getIDAddress());
+		found.get().setIdAdvertiser(ad.getIdAdvertiser());
+		found.get().setDtCriacao(ad.getDtCriacao());
+		found.get().setDtLimite(ad.getDtLimite());
+		found.get().setIdCategory(ad.getIdCategory());
+		found.get().setIdAddress(ad.getIdAddress());
 		
 		return aR.save(found.get());
 	}
 
-	public List<AdModel> findByUserId(Integer id) {
-		return aR.findByAdvertiserId(id);
+	public List<AdModel> findByUserId(AdvertiserModel id) {
+		return aR.findByIdAdvertiser(id);
 	}
 
-	public List<AdModel> search(String query, SignModel user) {
-		return  aR.searchByDescriptionStartingWithIgnoreCaseAndAdvertiser(query, user);
+	public List<AdModel> search(String query) {
+		return  aR.searchByDescricaoStartingWithIgnoreCase(query);
 	}
 
-	public List<AdModel> findByCategoryId(Integer categoryId, Integer userId) {
-		return aR.findByCategory(categoryId, userId);
+	public List<AdModel> findByCategoryId(CategoryModel category, Integer userId) {
+		return aR.findByIdCategory(category);
 	}
 
 

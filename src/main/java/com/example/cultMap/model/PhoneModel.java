@@ -12,27 +12,43 @@ public class PhoneModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
-	private String DDD;
-	private String Numero;
+	private String ddd;
+	private String numero;
 	
-	public Integer getID() {
-		return ID;
+	
+	
+	public String getDdd() {
+		return ddd;
 	}
-	public String getDDD() {
-		return DDD;
+
+
+
+	public void setDdd(String ddd) {
+		this.ddd = ddd;
 	}
-	public void setDDD(String dDD) {
-		DDD = dDD;
-	}
+
+
+
 	public String getNumero() {
-		return Numero;
+		return numero;
 	}
-	public void setNumero(String number) {
-		Numero = number;
+
+
+
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public PhoneModel() {
 		// TODO Auto-generated constructor stub
 	}

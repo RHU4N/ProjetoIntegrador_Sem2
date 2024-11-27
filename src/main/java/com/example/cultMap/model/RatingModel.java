@@ -13,50 +13,73 @@ public class RatingModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private UserModel IDUser;
+	private UserModel idUser;
 	
 	@OneToOne
-	private AdModel IDAd;
+	private AdModel idAd;
 	
-	private String Avaliacao;
-	private Integer Estrelas;
+	private String avaliacao;
+	private Integer estrelas;
 	
-	public Integer getID() {
-		return ID;
-	}
 	
-	public UserModel getIDUser() {
-		return IDUser;
+	
+	public UserModel getIdUser() {
+		return idUser;
 	}
 
-	public void setIDUser(UserModel iDUser) {
-		IDUser = iDUser;
+
+
+	public void setIdUser(UserModel idUser) {
+		this.idUser = idUser;
 	}
 
-	public AdModel getIDAd() {
-		return IDAd;
+
+
+	public AdModel getIdAd() {
+		return idAd;
 	}
 
-	public void setIDAd(AdModel iDAd) {
-		IDAd = iDAd;
+
+
+	public void setIdAd(AdModel idAd) {
+		this.idAd = idAd;
 	}
+
+
 
 	public String getAvaliacao() {
-		return Avaliacao;
+		return avaliacao;
 	}
+
+
+
 	public void setAvaliacao(String avaliacao) {
-		Avaliacao = avaliacao;
+		this.avaliacao = avaliacao;
 	}
+
+
+
 	public Integer getEstrelas() {
-		return Estrelas;
+		return estrelas;
 	}
+
+
+
 	public void setEstrelas(Integer estrelas) {
-		Estrelas = estrelas;
+		this.estrelas = estrelas;
 	}
-	
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
 	public RatingModel() {
 		// TODO Auto-generated constructor stub
 	}

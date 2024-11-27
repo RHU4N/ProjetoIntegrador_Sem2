@@ -15,52 +15,82 @@ public class UserModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer ID;
+	private Integer id;
 	
 	@OneToOne
-	private PhoneModel IDPhone;
+	private PhoneModel idPhone;
 	
 	@OneToOne
-	private SignModel IDSignUser;
+	private SignModel idSignUser;
 	
-	private String CPF;
-	private Date DTNascimento;
+	private String cpf;
+	private Date dtNascimento;
 	
-	public Integer getID() {
-		return ID;
-	}
 	
-	public PhoneModel getIDPhone() {
-		return IDPhone;
-	}
-
-	public void setIDPhone(PhoneModel iDPhone) {
-		IDPhone = iDPhone;
-	}
-
-
-	public SignModel getIDSignUser() {
-		return IDSignUser;
-	}
-
-	public void setIDSignUser(SignModel iDSignUser) {
-		IDSignUser = iDSignUser;
-	}
-
-	public String getCPF() {
-		return CPF;
-	}
-	public void setCPF(String cpf) {
-		CPF = cpf;
-	}
-
-	public Date getDTNascimento() {
-		return DTNascimento;
-	}
-	public void setDTNascimento(Date dTNascimento) {
-		DTNascimento = dTNascimento;
-	}
 
 	
+	public PhoneModel getIdPhone() {
+		return idPhone;
+	}
+
+
+
+
+	public void setIdPhone(PhoneModel idPhone) {
+		this.idPhone = idPhone;
+	}
+
+
+
+
+	public SignModel getIdSignUser() {
+		return idSignUser;
+	}
+
+
+
+
+	public void setIdSignUser(SignModel idSignUser) {
+		this.idSignUser = idSignUser;
+	}
+
+
+
+
+	public String getCpf() {
+		return cpf;
+	}
+
+
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+
+
+
+	public Date getDtNascimento() {
+		return dtNascimento;
+	}
+
+
+
+
+	public void setDtNascimento(Date dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+
 	public UserModel() {}
 }

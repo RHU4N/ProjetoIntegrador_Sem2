@@ -7,6 +7,6 @@ import com.example.cultMap.model.SignModel;
 
 public interface AdvertiserRepository extends JpaRepository<AdvertiserModel, Integer>{
 
-	AdvertiserModel findBySignID(SignModel user);
+	AdvertiserModel findByIdSignAdv(SignModel user);
 
 }
