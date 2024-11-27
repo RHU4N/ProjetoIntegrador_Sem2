@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Map from "./components/Map";
 import Events from "./components/pages/Eventos"; // Novo componente para "Eventos"
 import Explore from "./components/pages/Explorar"; // Novo componente para "Explorar"
+import AddEventos from "./components/pages/AddEvent"; // Novo componente para "Adicionar Evento"
+import MyEventos from "./components/pages/MyEvents";
 import LoginModal from "./components/Login"; // Importando o componente LoginModal
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
         return <Events />;
       case "explore":
         return <Explore />;
+      case "addEvent":
+        return <AddEventos />;
+      case "myEvents":
+        return <MyEventos />;
       default:
         return <Map />;
     }
@@ -41,7 +47,7 @@ function App() {
       <GlobalStyle />
       <Header onLoginClick={() => setLoginVisible(true)} />
       {renderContent()}
-      <Footer profileType="default" onPageChange={handlePageChange} />
+      <Footer profileType="advertiser" onPageChange={handlePageChange} />
             {/* Modal de Login */}
       <LoginModal
         isVisible={isLoginVisible}
