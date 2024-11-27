@@ -1,11 +1,13 @@
 import { GlobalStyle } from "./styles/global"
-import Site from "./components/Site";
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 function App() {
   return (
       <div>
           <GlobalStyle />
-          <Site />
+          <Header />
+          <Footer profileType="anunciante" />
       </div>
   );
 }

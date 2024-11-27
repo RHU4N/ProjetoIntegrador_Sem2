@@ -13,19 +13,25 @@ export const footer = styled.div`
     z-index: 10; /* Garante que o footer fique acima do conteúdo */
 `
 export const footerButton = styled.button`
-    background-color: white;  
-    color: #333;              
-    border: 2px solid #66bb6a; 
+    background-color: #1C1C1C;  
+    color: var(--white);              
+    border: 2px solid var(--coal); 
+    width: 200px;
     border-radius: 5px;        
     padding: 10px 20px;      
-    font-size: 16px;          
+    font-size: 25px;          
     font-weight: bold;         
     cursor: pointer;         
     transition: all 0.3s ease;
 
+    @media (max-width: 768px) { /* Para telas menores, como celulares */
+        width: auto;
+
+    }
+
     &:hover{
-        background-color: #f0f0f0; 
-        border-color: #4caf50;    
-        color: #4caf50;   
+        background-color: var(--white); 
+        border-color: var(--primary-light);    
+        color: var(--orange);   
     }
 `
