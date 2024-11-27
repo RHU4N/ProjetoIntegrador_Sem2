@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from "./styles"; // Estilos atualizados
 import SignupModal from "../cadastro";
-import App from "../../App";
 
 const LoginModal = ({ isVisible, onClose, onLogin, onSignup }) => {
+  const [isSignupVisible, setSignupVisible] = useState(false); // Estado para controlar o modal
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,12 +54,22 @@ const LoginModal = ({ isVisible, onClose, onLogin, onSignup }) => {
             <button type="submit" style={styles.button}>
               Entrar
             </button>
-            <button type="button" onClick={onSignup} style={styles.signupButton}>Cadastrar</button>
+            <button
+              type="button"
+              onClick={() => setSignupVisible(true)} // Corrigido para setSignupVisible
+              style={styles.signupButton}
+            >
+              Cadastrar
+            </button>
           </div>
           <button type="button" onClick={onClose} style={styles.closeButton}>
             Fechar
           </button>
         </form>
+        <SignupModal
+          isVisible={isSignupVisible}
+          onClose={() => setSignupVisible(false)}
+        />
       </div>
     </div>
   );
