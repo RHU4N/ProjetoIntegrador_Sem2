@@ -31,6 +31,7 @@ public class AdModel {
 	private String descricao;
 	private Timestamp dtCriacao;
 	private Timestamp dtLimite;
+	
 	public AdvertiserModel getIdAdvertiser() {
 		return idAdvertiser;
 	}

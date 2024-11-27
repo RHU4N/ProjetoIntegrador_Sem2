@@ -24,7 +24,7 @@ import com.example.cultMap.repository.UserRepository;
 @Service
 public class SignService {
 	
-	private Integer TOKEN_TTL = 300;
+	private Integer TOKEN_TTL = 3000;
 	
 	@Autowired
 	private UserRepository uR;
