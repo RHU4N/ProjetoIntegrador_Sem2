@@ -12,7 +12,7 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
     onClose(); // Fecha o modal após o login
   };
 
-  if (!isVisible) return null; // Não renderiza o modal se ele não estiver visível
+  if (!isVisible) return null;
 
   return (
     <div style={styles.overlay}>
