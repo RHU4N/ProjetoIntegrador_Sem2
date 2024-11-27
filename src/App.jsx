@@ -3,7 +3,7 @@ import { GlobalStyle } from "./styles/global";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
-import LoginModal from "./components/LoginModal"; // Importe o LoginModal
+import LoginModal from "./components/Login"; // Importe o LoginModal
 
 function App() {
   const [isLoginVisible, setLoginVisible] = useState(false); // Estado para o modal de login

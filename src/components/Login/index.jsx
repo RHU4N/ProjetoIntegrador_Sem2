@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./styles"; // Importando os estilos
+import styles from "./styles"; // Estilos separados
 
 const LoginModal = ({ isVisible, onClose, onLogin }) => {
   const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
     onClose(); // Fecha o modal após o login
   };
 
-  if (!isVisible) return null; // Não renderiza o modal se ele não estiver visível
+  if (!isVisible) return null;
 
   return (
     <div style={styles.overlay}>
