@@ -1,23 +1,17 @@
 package com.example.cultMap.controller;
 
 import java.sql.Date;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.cultMap.model.AdModel;
-import com.example.cultMap.model.CategoryModel;
-import com.example.cultMap.model.SignModel;
 import com.example.cultMap.model.TokenModel;
 import com.example.cultMap.service.SignService;
 
@@ -113,6 +107,7 @@ public class SignController {
 		String cnpj = user.getCnpj();	
 		
 		try {
+			System.out.println(tipo);
 			sS.signUp(nome, email, senha, tipo, cpf, dtNascimento, ddd, numero, cnpj);
 			return ResponseEntity.ok().build();
 		} catch (Exception e) {

@@ -76,14 +76,15 @@ public class SignService {
 			sR.save(sign);
 			pR.save(phone);
 			
-			if(tipo == "Anunciante") {
+			if(tipo.equals("a")) {
+				System.out.println(tipo);
 				AdvertiserModel aM = new AdvertiserModel();
 				aM.setCnpj(cnpj);
 				aM.setIdSignAdv(sR.findById(sign.getId()).get());
 				aM.setIdPhone(pR.findById(phone.getId()).get());
 				
 				aR.save(aM);
-			}else if(tipo == "Usuario") {
+			}else if(tipo.equals("u")) {
 				UserModel uM = new UserModel();
 				uM.setCpf(cpf);
 				uM.setDtNascimento(dtNascimento);

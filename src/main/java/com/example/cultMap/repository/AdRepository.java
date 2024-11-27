@@ -10,10 +10,10 @@ import com.example.cultMap.model.CategoryModel;
 
 public interface AdRepository extends JpaRepository<AdModel, Integer>{
 
-	List<AdModel> searchByDescricaoStartingWithIgnoreCase(String query);
-
 	List<AdModel> findByIdAdvertiser(AdvertiserModel id);
 
 	List<AdModel> findByIdCategory(CategoryModel category );
+
+	List<AdModel> searchByDescricaoContainsIgnoreCase(String query);
 
 }

@@ -50,7 +50,7 @@ public class AdService {
 	}
 
 	public List<AdModel> search(String query) {
-		return  aR.searchByDescricaoStartingWithIgnoreCase(query);
+		return  aR.searchByDescricaoContainsIgnoreCase(query);
 	}
 
 	public List<AdModel> findByCategoryId(CategoryModel category, Integer userId) {
