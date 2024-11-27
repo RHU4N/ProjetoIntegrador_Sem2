@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./styles"; // Importando os estilos
 
 const LoginModal = ({ isVisible, onClose, onLogin }) => {
@@ -57,5 +58,11 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
     </div>
   );
 };
+LoginModal.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onLogin: PropTypes.func.isRequired,
+};
 
 export default LoginModal;
+

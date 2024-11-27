@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { GlobalStyle } from "./styles/global";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
-import LoginModal from "./components/LoginModal"; // Importe o LoginModal
+import Events from "./components/pages/Eventos"; // Novo componente para "Eventos"
+import Explore from "./components/pages/Explorar"; // Novo componente para "Explorar"
+import LoginModal from "./components/Login"; // Importando o componente LoginModal
 
 function App() {
   const [isLoginVisible, setLoginVisible] = useState(false); // Estado para o modal de login
@@ -13,14 +15,34 @@ function App() {
     // Aqui você pode enviar os dados para o backend
   };
 
+  const [currentPage, setCurrentPage] = useState("home"); // Estado para controlar a página atual
+
+  // Função para alterar a página
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  // Renderizar o conteúdo dinamicamente
+  const renderContent = () => {
+    switch (currentPage) {
+      case "home":
+        return <Map />;
+      case "events":
+        return <Events />;
+      case "explore":
+        return <Explore />;
+      default:
+        return <Map />;
+    }
+  };
+
   return (
     <div>
       <GlobalStyle />
-      {/* Passe a função para abrir o modal no Header */}
       <Header onLoginClick={() => setLoginVisible(true)} />
-      <Map />
-      <Footer profileType="anunciante" />
-      {/* Modal de Login */}
+      {renderContent()}
+      <Footer profileType="default" onPageChange={handlePageChange} />
+            {/* Modal de Login */}
       <LoginModal
         isVisible={isLoginVisible}
         onClose={() => setLoginVisible(false)}
