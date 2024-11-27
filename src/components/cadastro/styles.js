@@ -1,0 +1,85 @@
+
+const styles = {
+    overlay: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 1000,
+    },
+    modal: {
+      width: "500px",
+      backgroundColor: "#ffffff",
+      borderRadius: "12px",
+      padding: "30px",
+      boxShadow: "0 6px 15px rgba(0, 0, 0, 0.3)",
+      textAlign: "center",
+    },
+    title: {
+      fontSize: "24px",
+      color: "#333",
+      marginBottom: "20px",
+      fontWeight: "bold",
+    },
+    form: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "stretch",
+    },
+    inputGroup: {
+      marginBottom: "15px",
+      textAlign: "left",
+    },
+    label: {
+      marginBottom: "5px",
+      fontWeight: "bold",
+      color: "#555",
+    },
+    input: {
+      width: "100%",
+      padding: "10px",
+      border: "1px solid #ccc",
+      borderRadius: "8px",
+      fontSize: "14px",
+    },
+    button: {
+      padding: "10px",
+      backgroundColor: "#4CAF50",
+      color: "white",
+      border: "none",
+      borderRadius: "8px",
+      cursor: "pointer",
+      marginTop: "15px",
+      fontSize: "16px",
+      fontWeight: "bold",
+    },
+    closeButton: {
+      padding: "10px",
+      backgroundColor: "#f44336",
+      color: "white",
+      border: "none",
+      borderRadius: "8px",
+      cursor: "pointer",
+      fontSize: "16px",
+      fontWeight: "bold",
+      marginTop: "10px",
+    },
+    select: {
+      width: "100%",
+      padding: "10px",
+      border: "1px solid #ccc",
+      borderRadius: "8px",
+      fontSize: "14px",
+      backgroundColor: "white",
+      appearance: "none",
+      cursor: "pointer",
+    },
+  };
+  
+  export default styles;
+  

@@ -1,15 +1,16 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./styles"; // Importando os estilos
+import React, { useState } from "react";
+import styles from "./styles"; // Estilos atualizados
+import SignupModal from "../cadastro";
+import App from "../../App";
 
-const LoginModal = ({ isVisible, onClose, onLogin }) => {
+const LoginModal = ({ isVisible, onClose, onLogin, onSignup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onLogin({ email, password });
-    onClose(); // Fecha o modal após o login
+    onClose();
   };
 
   if (!isVisible) return null;
@@ -17,7 +18,8 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
   return (
     <div style={styles.overlay}>
       <div style={styles.modal}>
-        <h2 style={styles.title}>Login</h2>
+        <h2 style={styles.title}>Bem-vindo de volta!</h2>
+        <p style={styles.subtitle}>Por favor, faça login para continuar</p>
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
             <label htmlFor="email" style={styles.label}>
@@ -47,9 +49,12 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
               style={styles.input}
             />
           </div>
-          <button type="submit" style={styles.button}>
-            Entrar
-          </button>
+          <div style={styles.buttonGroup}>
+            <button type="submit" style={styles.button}>
+              Entrar
+            </button>
+            <button type="button" onClick={onSignup} style={styles.signupButton}>Cadastrar</button>
+          </div>
           <button type="button" onClick={onClose} style={styles.closeButton}>
             Fechar
           </button>
@@ -58,11 +63,5 @@ const LoginModal = ({ isVisible, onClose, onLogin }) => {
     </div>
   );
 };
-LoginModal.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  onLogin: PropTypes.func.isRequired,
-};
 
 export default LoginModal;
-
