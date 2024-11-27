@@ -32,6 +32,6 @@ export const footerButton = styled.button`
     &:hover{
         background-color: var(--white); 
         border-color: var(--primary-light);    
-        color: var(--orange);   
+        color: var(--secondary);   
     }
 `
