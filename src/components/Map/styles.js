@@ -47,4 +47,26 @@ const styles = {
   };
   
   export default styles;
+  export const sendSignupData = async (data) => {
+    try {
+      const response = await fetch("Localhost:8000", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        return { success: true, data: result };
+      } else {
+        return { success: false, error: result.error || "Erro desconhecido" };
+      }
+    } catch (error) {
+      console.error("Erro ao enviar dados:", error);
+      return { success: false, error: "Erro de conexão com a API" };
+    }
+  };
   
